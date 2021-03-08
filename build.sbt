@@ -71,7 +71,6 @@ lazy val root = project.in(file(".")).
     libraryDependencies ++= Seq(
       "net.exoego" %%% "scala-js-nodejs-v14" % "0.13.0",
       "com.github.p2m2" %%% "data-model-rdfjs" % "1.0.0",
-      "com.github.p2m2" %%% "n3js" % "1.0.0",
       "com.lihaoyi" %%% "utest" % "0.7.7" % "test"
     ) ,
     testFrameworks += new TestFramework("utest.runner.Framework")
