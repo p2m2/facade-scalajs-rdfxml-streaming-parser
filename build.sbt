@@ -1,8 +1,10 @@
 import sbt.Keys.{testFrameworks, version}
 
+lazy val version_rdfxml = "1.4.0"
+
 def getPackageSetting = Seq(
   name := "rdfxml-streaming-parser",
-  version :=  "1.0.0",
+  version :=  version_rdfxml,
   scalaVersion := "2.13.5",
   organization := "com.github.p2m2",
   organizationName := "p2m2",
@@ -57,17 +59,17 @@ lazy val root = project.in(file(".")).
   settings(inConfig(IntegrationTest)(ScalaJSPlugin.testConfigSettings): _*).
   settings(
     getPackageSetting,
-    scalaJSLinkerConfig in (Compile, fastOptJS ) ~= {
+    Compile / fastOptJS / scalaJSLinkerConfig ~= {
       _.withOptimizer(false)
         .withPrettyPrint(true)
         .withSourceMap(true)
     },
-    scalaJSLinkerConfig in (Compile, fullOptJS) ~= {
+    Compile / fullOptJS / scalaJSLinkerConfig ~= {
       _.withSourceMap(false)
         .withModuleKind(ModuleKind.CommonJSModule)
     },
     webpackBundlingMode := BundlingMode.LibraryAndApplication(),
-    npmDependencies in Compile ++= Seq("rdfxml-streaming-parser" -> "1.4.0"),
+    Compile / npmDependencies ++= Seq("rdfxml-streaming-parser" -> version_rdfxml),
     libraryDependencies ++= Seq(
       "net.exoego" %%% "scala-js-nodejs-v14" % "0.13.0",
       "com.github.p2m2" %%% "data-model-rdfjs" % "1.0.0",
