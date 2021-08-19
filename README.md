@@ -6,7 +6,7 @@ Scala.js Facade of the [RDF/XML Streaming Parser library](https://github.com/rdf
 ## Install
 
 ```
-libraryDependencies += "com.github.p2m2" %%% "rdfxml-streaming-parser" % "1.0.0",
+libraryDependencies += "com.github.p2m2" %%% "rdfxml-streaming-parser" % "1.5.0",
 ```
 
 
