@@ -4,7 +4,7 @@ lazy val version_rdfxml = "1.5.0"
 
 def getPackageSetting = Seq(
   name := "rdfxml-streaming-parser",
-  version :=  version_rdfxml,
+  version :=  scala.util.Properties.envOrElse("PROG_VERSION", version_rdfxml ),
   scalaVersion := "2.13.7",
   organization := "com.github.p2m2",
   organizationName := "p2m2",
