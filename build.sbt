@@ -72,7 +72,7 @@ lazy val root = project.in(file(".")).
     Compile / npmDependencies ++= Seq("rdfxml-streaming-parser" -> version_rdfxml),
     libraryDependencies ++= Seq(
       "net.exoego" %%% "scala-js-nodejs-v14" % "0.14.0",
-      "com.github.p2m2" %%% "data-model-rdfjs" % "1.0.0",
+      "com.github.p2m2" %%% "data-model-rdfjs" % "1.0.1",
       "com.lihaoyi" %%% "utest" % "0.7.11" % "test"
     ) ,
     testFrameworks += new TestFramework("utest.runner.Framework"),
