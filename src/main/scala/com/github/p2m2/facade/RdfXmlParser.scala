@@ -24,6 +24,7 @@ trait RdfXmlParserOptions extends js.Object {
   val strict                 : js.UndefOr[Boolean] = js.undefined
   val trackPosition          : js.UndefOr[Boolean] = js.undefined
   val allowDuplicateRdfIds   : js.UndefOr[Boolean] = js.undefined
+  val validateUri            : js.UndefOr[Boolean] = js.undefined
 }
 
 object RdfXmlParserOptions {
@@ -33,13 +34,15 @@ object RdfXmlParserOptions {
              defaultGraph  : js.UndefOr[NamedNode] = js.undefined,
              strict                 : js.UndefOr[Boolean] = js.undefined,
              trackPosition          : js.UndefOr[Boolean] = js.undefined,
-             allowDuplicateRdfIds   : js.UndefOr[Boolean] = js.undefined
+             allowDuplicateRdfIds   : js.UndefOr[Boolean] = js.undefined,
+             validateUri            : js.UndefOr[Boolean] = js.undefined
            ): RdfXmlParserOptions = js.Dynamic.literal(
     dataFactory = dataFactory,
     baseIRI = baseIRI,
     defaultGraph = defaultGraph,
     strict = strict,
     trackPosition = trackPosition,
-    allowDuplicateRdfIds = allowDuplicateRdfIds
+    allowDuplicateRdfIds = allowDuplicateRdfIds,
+    validateUri = validateUri
   ).asInstanceOf[RdfXmlParserOptions]
 }
