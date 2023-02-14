@@ -1,6 +1,6 @@
 import sbt.Keys.{testFrameworks, version}
 
-lazy val version_rdfxml = "2.2.1"
+lazy val version_rdfxml = "1.5.0"
 
 def getPackageSetting = Seq(
   name := "rdfxml-streaming-parser",
