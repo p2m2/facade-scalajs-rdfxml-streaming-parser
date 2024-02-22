@@ -1,6 +1,6 @@
 import sbt.Keys.{testFrameworks, version}
 
-lazy val version_rdfxml = "2.2.1"
+lazy val version_rdfxml = "2.4.0"
 
 def getPackageSetting = Seq(
   name := "rdfxml-streaming-parser",
@@ -71,9 +71,8 @@ lazy val root = project.in(file(".")).
     webpackBundlingMode := BundlingMode.LibraryAndApplication(),
     Compile / npmDependencies ++= Seq("rdfxml-streaming-parser" -> version_rdfxml),
     libraryDependencies ++= Seq(
-      "net.exoego" %%% "scala-js-nodejs-v16" % "0.14.0",
-      "com.github.p2m2" %%% "data-model-rdfjs" % "1.0.1",
-      "com.lihaoyi" %%% "utest" % "0.8.1" % "test"
+      "com.github.p2m2" %%% "data-model-rdfjs" % "1.0.2",
+      "com.lihaoyi" %%% "utest" % "0.8.2" % "test"
     ) ,
     testFrameworks += new TestFramework("utest.runner.Framework"),
     coverageMinimumStmtTotal := 86,
